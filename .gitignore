@@ -1,0 +1,43 @@
+# cached artifacts
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+.idea/
+
+# Visual Studio
+/.vscode/
+.vs/
+appsettings.Development.json
+
+# user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# build artifacts
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
+__debug_bin
+
+# front-end artifacts
+node_modules/
+bower_modules/
+lib/
+*.min.css
+*.min.js
+*.min.js.map
+**/.config

@@ -1,0 +1,18 @@
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+*               text=auto
+
+*.gitattributes text
+.gitignore      text
+*.md            text
+
+.gitattributes  export-ignore
+.gitignore      export-ignore
+
+*.gitattributes linguist-language=gitattributes
+
+*.cs            text diff=csharp
+
+*.yaml          text eol=lf
+*.yml           text eol=lf

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acerto.Auth.SDK\Acerto.Auth.SDK.csproj" />
+    <ProjectReference Include="..\Acerto.Orders.SDK\Acerto.Orders.SDK.csproj" />
+    <ProjectReference Include="..\Acerto.Products.SDK\Acerto.Products.SDK.csproj" />
+    <ProjectReference Include="..\Acerto.Shared.Contracts\Acerto.Shared.Contracts.csproj" />
+    <ProjectReference Include="..\Acerto.Shared\Acerto.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

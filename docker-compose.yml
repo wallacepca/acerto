@@ -1,0 +1,134 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis
+    command: redis-server --requirepass redis2024!
+    networks:
+    - acerto_desafio_backend
+    restart: always
+    ports:
+      - "6379:6379"
+  rabbitmq:
+    image: rabbitmq:3.13.2-management-alpine
+    environment:
+      - RABBITMQ_DEFAULT_PASS=acerto
+      - RABBITMQ_DEFAULT_USER=acerto
+    networks:
+      - acerto_desafio_backend
+    restart: always
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+  postgres:
+    image: postgres:16.2-alpine3.19
+    environment:
+      - POSTGRES_USER=acerto
+      - POSTGRES_PASSWORD=acerto
+      - POSTGRES_DB=postgres
+    networks:
+      - acerto_desafio_backend
+    restart: always
+    ports:
+      - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4:8.6
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=acerto@acerto.com.br
+      - PGADMIN_DEFAULT_PASSWORD=acerto
+      - PGADMIN_DISABLE_POSTFIX=true
+      - PGADMIN_CONFIG_CONSOLE_LOG_LEVEL=1
+    networks:
+    - acerto_desafio_backend
+    restart: always
+    ports:
+      - "54321:80"
+  auth-service:
+    build:
+      context: .
+      dockerfile: src/Acerto.Auth.Service/Dockerfile
+    environment:
+      - ASPNETCORE_HTTP_PORTS=8080      
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/certificate.pfx
+    depends_on:
+      - postgres
+      - rabbitmq
+    networks:
+      - acerto_desafio_backend
+    restart: always
+    ports:
+      - "50010:8080"
+      - "50011:8081"
+    volumes:
+      - dotnet-monitor-tmp:/tmp
+      - ./certificate.pfx:/root/.aspnet/https/certificate.pfx
+  products-service:
+    build:
+      context: .
+      dockerfile: src/Acerto.Products.Service/Dockerfile
+    environment:
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081      
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/certificate.pfx
+    depends_on:
+      - postgres
+      - rabbitmq
+      - auth-service
+    networks:
+      - acerto_desafio_backend
+    restart: always
+    ports:
+      - "50020:8080"
+      - "50021:8081"
+    volumes:
+      - dotnet-monitor-tmp:/tmp
+      - ./certificate.pfx:/root/.aspnet/https/certificate.pfx
+  orders-service:
+    build:
+      context: .
+      dockerfile: src/Acerto.Orders.Service/Dockerfile
+    environment:
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081      
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/certificate.pfx
+    depends_on:
+      - postgres
+      - rabbitmq
+      - auth-service
+      - products-service
+    networks:
+      - acerto_desafio_backend
+    restart: always
+    ports:
+      - "50030:8080"
+      - "50031:8081"
+    volumes:
+      - dotnet-monitor-tmp:/tmp
+      - ./certificate.pfx:/root/.aspnet/https/certificate.pfx
+  dotnet-monitor:
+    image: mcr.microsoft.com/dotnet/monitor:8
+    environment:
+      - DOTNETMONITOR_Urls=http://*:55555
+      - DOTNETMONITOR_Metrics__Endpoints=http://*:55556
+      - DOTNETMONITOR_Storage__DefaultSharedPath=/tmp
+      - DOTNETMONITOR_DiagnosticPort__ConnectionMode=Connect
+      - DOTNETMONITOR_Storage__DumpTempFolder=/tmp
+      - NO_AUTH=1
+    command: ["collect", "--no-auth"]
+    ports:
+      - 55555:55555
+      - 55556:55556
+    restart: on-failure:3
+    volumes:
+      - dotnet-monitor-tmp:/tmp
+      - ./dotnet-monitor/appsettings.json:/app/appsettings.json   
+    networks:
+      - acerto_desafio_backend
+networks:
+  acerto_desafio_backend:
+volumes:
+  dotnet-monitor-tmp:

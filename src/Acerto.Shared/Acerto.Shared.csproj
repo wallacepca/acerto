@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acerto.Shared.Contracts\Acerto.Shared.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App"></FrameworkReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="$(AutoMapperVersion)" />
+    <PackageReference Include="AutoMapper.Collection" Version="$(AutoMapperCollectionVersion)" />
+    <PackageReference Include="AutoMapper.Collection.EntityFrameworkCore" Version="$(AutoMapperEFCoreVersion)" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="$(AutoMapperDIVersion)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="8.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(EFCoreNpgsqlVersion)" />
+
+    
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="$(EntityFrameworkCoreVersion)" />
+
+    <PackageReference Include="Rebus" Version="$(RebusVersion)" />
+    <PackageReference Include="Rebus.Microsoft.Extensions.Logging" Version="$(RebusLoggingVersion)" />
+    <PackageReference Include="Rebus.RabbitMq" Version="$(RebusRabbitMQVersion)" />
+    <PackageReference Include="Rebus.ServiceProvider" Version="$(RebusDIVersion)" />
+
+    <PackageReference Include="Refit" Version="7.0.0" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
+    <PackageReference Include="NetDevPack.Identity" Version="7.0.1" />
+  </ItemGroup>
+  
+</Project>

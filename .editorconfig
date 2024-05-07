@@ -1,0 +1,326 @@
+﻿﻿# Schema: http://EditorConfig.org
+# Docs: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+
+# top-most EditorConfig file
+root = true
+
+# Don't use tabs for indentation.
+[*]
+indent_style = space
+trim_trailing_whitespace = true
+
+# Code files
+[*.{cs,csx,vb,vbx}]
+indent_size = 4
+insert_final_newline = true
+#charset = utf-8-bom
+
+# Xml project files
+[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
+indent_size = 4
+
+# Xml config files
+[*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct,xml,stylecop}]
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_size = 2
+
+# Shell scripts
+[*.sh]
+end_of_line = lf
+
+[*.{cmd,bat}]
+end_of_line = crlf
+
+## Language conventions
+# Dotnet code style settings:
+[*.{cs,vb}]
+# Avoid "this." and "Me." if not necessary
+dotnet_style_qualification_for_event = false : error
+dotnet_style_qualification_for_field = false : error
+dotnet_style_qualification_for_method = false : error
+dotnet_style_qualification_for_property = false : error
+
+# Use language keywords instead of framework type names for type references
+dotnet_style_predefined_type_for_locals_parameters_members = true : error
+dotnet_style_predefined_type_for_member_access = true : error
+
+# Expression-level preferences
+dotnet_style_coalesce_expression = true:error
+dotnet_style_collection_initializer = true:error
+dotnet_style_explicit_tuple_names = true:error
+dotnet_style_null_propagation = true:error
+dotnet_style_object_initializer = true:error
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:error
+dotnet_style_require_accessibility_modifiers = always : error
+
+# CSharp code style settings:
+[*.cs]
+# Prefer "var" everywhere (Implicit and explicit types)
+csharp_style_var_elsewhere = true : error
+csharp_style_var_for_built_in_types = true : error
+csharp_style_var_when_type_is_apparent = true : error
+
+# Expression-Bodied members
+csharp_style_expression_bodied_accessors = true:error
+csharp_style_expression_bodied_indexers = true:error
+csharp_style_expression_bodied_operators = true:error
+csharp_style_expression_bodied_properties = true:error
+# Explicitly disabled due to difference in coding style between source and tests
+#csharp_style_expression_bodied_constructors = true : warning
+#csharp_style_expression_bodied_methods = true : warning
+
+# Pattern matching
+csharp_style_pattern_matching_over_as_with_null_check = true : warning
+csharp_style_pattern_matching_over_is_with_cast_check = true : warning
+
+# Inlined variable declarations
+csharp_style_inlined_variable_declaration = true : warning
+
+# Expression-level preferences
+csharp_prefer_inferred_anonymous_type_member_names = true : warning
+csharp_prefer_inferred_tuple_names = true : warning
+csharp_prefer_simple_default_expression = true : warning
+csharp_preferred_modifier_order = public,private,protected,internal,const,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async
+csharp_style_deconstructed_variable_declaration = true : warning
+csharp_style_pattern_local_over_anonymous_function = true : warning
+
+# Null-checking preference
+csharp_style_conditional_delegate_call = true : warning
+csharp_style_throw_expression = true : warning
+
+# Code block preferences
+csharp_prefer_braces = true:error
+
+## Formatting conventions
+# Dotnet formatting settings:
+[*.{cs,vb}]
+# Organize usings
+dotnet_sort_system_directives_first = true
+
+# CSharp formatting settings:
+[*.cs]
+# Newline options
+csharp_new_line_before_catch = true
+csharp_new_line_before_else = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_open_brace = all
+csharp_new_line_between_query_expression_clauses = true
+
+# Identation options
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_indent_labels = flush_left
+csharp_indent_block_contents = true
+csharp_indent_braces = false
+csharp_indent_case_contents_when_block = true
+
+# Spacing options
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_parentheses = false
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_declaration_name_and_open_parenthesis = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_after_comma = true
+csharp_space_before_comma = false
+csharp_space_after_dot = false
+csharp_space_before_dot = false
+csharp_space_after_semicolon_in_for_statement = true
+csharp_space_before_semicolon_in_for_statement = false
+csharp_space_around_declaration_statements = false
+csharp_space_before_open_square_brackets = false
+csharp_space_between_empty_square_brackets = false
+csharp_space_between_square_brackets = false
+
+# Wrapping options
+csharp_preserve_single_line_blocks = true
+csharp_preserve_single_line_statements = false
+
+## Naming conventions
+
+# SA0001: XML comment analysis is disabled
+dotnet_diagnostic.SA0001.severity = none
+
+# SA1200: Using directives should be placed correctly
+dotnet_diagnostic.SA1200.severity = none
+
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = none
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = none
+
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = none
+
+# SA1516: Elements should be separated by blank line
+dotnet_diagnostic.SA1516.severity = none
+
+# SA1500: Braces for multi-line statements should not share line
+dotnet_diagnostic.SA1500.severity = error
+
+# SA1001: Commas should be spaced correctly
+dotnet_diagnostic.SA1001.severity = error
+
+# SA1013: Closing braces should be spaced correctly
+dotnet_diagnostic.SA1013.severity = error
+
+# SA1137: Elements should have the same indentation
+dotnet_diagnostic.SA1137.severity = error
+
+# SA1028: Code should not contain trailing whitespace
+dotnet_diagnostic.SA1028.severity = error
+
+# IDE0058: Expression value is never used
+csharp_style_unused_value_expression_statement_preference = discard_variable:none
+
+# IDE0047: Remove unnecessary parentheses
+dotnet_diagnostic.IDE0047.severity = error
+
+# SA1005: Single line comments should begin with single space
+dotnet_diagnostic.SA1005.severity = suggestion
+
+# SA1124: Do not use regions
+dotnet_diagnostic.SA1124.severity = error
+
+# SA1309: Field names should not begin with underscore
+dotnet_diagnostic.SA1309.severity = none
+
+# SA1413: Use trailing comma in multi-line initializers
+dotnet_diagnostic.SA1413.severity = none
+
+# SA1515: Single-line comment should be preceded by blank line
+dotnet_diagnostic.SA1515.severity = suggestion
+
+# SA1512: Single-line comments should not be followed by blank line
+dotnet_diagnostic.SA1512.severity = suggestion
+
+# SA1629: Documentation text should end with a period
+dotnet_diagnostic.SA1629.severity = suggestion
+
+# SA1120: Comments should contain text
+dotnet_diagnostic.SA1120.severity = suggestion
+
+# SA1623: Property summary documentation should match accessors
+dotnet_diagnostic.SA1623.severity = suggestion
+
+# SA1201: Elements should appear in the correct order
+dotnet_diagnostic.SA1201.severity = suggestion
+
+# SA1615: Element return value should be documented
+dotnet_diagnostic.SA1615.severity = suggestion
+csharp_using_directive_placement = outside_namespace:silent
+csharp_prefer_simple_using_statement = true:suggestion
+csharp_style_namespace_declarations = block_scoped:silent
+csharp_style_prefer_method_group_conversion = true:silent
+csharp_style_prefer_top_level_statements = true:silent
+csharp_style_prefer_primary_constructors = true:silent
+csharp_style_expression_bodied_methods = false:silent
+csharp_style_expression_bodied_constructors = false:silent
+csharp_style_expression_bodied_lambdas = true:silent
+csharp_style_expression_bodied_local_functions = false:silent
+
+# IDE0290: Use primary constructor
+dotnet_diagnostic.IDE0290.severity = silent
+
+[*.{cs,vb}]
+
+## Naming styles
+
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# PascalCase with I prefix
+dotnet_naming_style.interface_style.capitalization = pascal_case
+dotnet_naming_style.interface_style.required_prefix = I
+
+# Generic Type Parameters must be PascalCase and the first character must be a 'T'
+dotnet_naming_style.prefix_type_parameters_with_t_style.capitalization = pascal_case
+dotnet_naming_style.prefix_type_parameters_with_t_style.required_prefix = T
+
+# camelCase with _ prefix
+dotnet_naming_style.camel_case_with_underscore_prefix.capitalization = camel_case
+dotnet_naming_style.camel_case_with_underscore_prefix.required_prefix = _
+
+## Rules
+# Namespaces
+dotnet_naming_rule.namespace_naming.symbols = namespace_symbol
+dotnet_naming_rule.namespace_naming.style = pascal_case_style
+dotnet_naming_rule.namespace_naming.severity = error
+
+dotnet_naming_symbols.namespace_symbol.applicable_kinds = namespace
+dotnet_naming_symbols.namespace_symbol.applicable_accessibilities = *
+
+# Interfaces
+dotnet_naming_rule.interface_naming.symbols = interface_symbol
+dotnet_naming_rule.interface_naming.style = interface_style
+dotnet_naming_rule.interface_naming.severity = error
+
+dotnet_naming_symbols.interface_symbol.applicable_kinds = interface
+dotnet_naming_symbols.interface_symbol.applicable_accessibilities = *
+
+# Classes, Structs, Enums, Properties, Methods, Events
+dotnet_naming_rule.class_naming.symbols = class_symbol
+dotnet_naming_rule.class_naming.style = pascal_case_style
+dotnet_naming_rule.class_naming.severity = error
+
+# Generics Type Parameters use PascalCase and are prefixed with uppercase 'T'
+dotnet_naming_symbols.type_parameter_group.applicable_kinds = type_parameter
+dotnet_naming_rule.type_parameter_rule.symbols              = type_parameter_group
+dotnet_naming_rule.type_parameter_rule.style = prefix_type_parameters_with_t_style
+dotnet_naming_rule.type_parameter_rule.severity = warning
+
+dotnet_naming_symbols.class_symbol.applicable_kinds = class, struct, enum, property, method, event
+dotnet_naming_symbols.class_symbol.applicable_accessibilities = *
+
+# Const fields
+dotnet_naming_rule.const_field_naming.symbols = const_field_symbol
+dotnet_naming_rule.const_field_naming.style = pascal_case_style
+dotnet_naming_rule.const_field_naming.severity = error
+
+dotnet_naming_symbols.const_field_symbol.applicable_kinds = field
+dotnet_naming_symbols.const_field_symbol.applicable_accessibilities = *
+dotnet_naming_symbols.const_field_symbol.required_modifiers = const
+
+# Public fields
+dotnet_naming_rule.public_field_naming.symbols = public_field_symbol
+dotnet_naming_rule.public_field_naming.style = pascal_case_style
+dotnet_naming_rule.public_field_naming.severity = error
+
+dotnet_naming_symbols.public_field_symbol.applicable_kinds = field
+dotnet_naming_symbols.public_field_symbol.applicable_accessibilities = public, internal
+
+# Other fields
+dotnet_naming_rule.other_field_naming.symbols = other_field_symbol
+dotnet_naming_rule.other_field_naming.style = camel_case_with_underscore_prefix
+dotnet_naming_rule.other_field_naming.severity = error
+
+dotnet_naming_symbols.other_field_symbol.applicable_kinds = field
+dotnet_naming_symbols.other_field_symbol.applicable_accessibilities = *
+
+# Everything Else
+dotnet_naming_rule.everything_else_naming.symbols = everything_else
+dotnet_naming_rule.everything_else_naming.style = camel_case_style
+dotnet_naming_rule.everything_else_naming.severity = warning
+
+dotnet_naming_symbols.everything_else.applicable_kinds = *
+dotnet_naming_symbols.everything_else.applicable_accessibilities = *
+dotnet_style_operator_placement_when_wrapping = beginning_of_line
+tab_width = 4
+end_of_line = crlf
+dotnet_style_prefer_auto_properties = true:silent
+dotnet_style_prefer_simplified_boolean_expressions = true:suggestion
+dotnet_style_prefer_conditional_expression_over_assignment = true:silent
+dotnet_style_prefer_conditional_expression_over_return = true:silent
+dotnet_style_prefer_inferred_tuple_names = true:suggestion

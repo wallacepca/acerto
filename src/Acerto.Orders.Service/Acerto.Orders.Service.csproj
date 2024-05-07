@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RuntimeIdentifiers>win-x64;linux-x64;osx-x64</RuntimeIdentifiers>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="$(AspNetCoreHealthChecksVersion)" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="$(AspNetCoreHealthChecksVersion)" />    
+    <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="$(AspNetCoreHealthChecksVersion)" />
+    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="$(AspNetCoreHealthChecksVersion)" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="$(AspNetCoreHealthChecksVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.4" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.4" NoWarn="NU1605" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(EntityFrameworkCoreVersion)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageReference Include="NetDevPack.Security.JwtExtensions" Version="8.0.0" />
+    <PackageReference Include="FluentValidation" Version="$(FluentValidationVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acerto.Auth.SDK\Acerto.Auth.SDK.csproj" />
+    <ProjectReference Include="..\Acerto.Products.SDK\Acerto.Products.SDK.csproj" />
+    <ProjectReference Include="..\Acerto.Shared\Acerto.Shared.csproj" />
+  </ItemGroup>
+</Project>

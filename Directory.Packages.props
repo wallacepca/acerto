@@ -1,0 +1,57 @@
+<Project>
+  <!-- frameworks -->
+  <PropertyGroup>
+    <DotNetVersion>7.0.9</DotNetVersion>
+    <AspNetCoreVersion>8.0.4</AspNetCoreVersion>
+    <DotNetExtensionPackagesVersion>7.0.0</DotNetExtensionPackagesVersion>
+    <EntityFrameworkCoreVersion>8.0.4</EntityFrameworkCoreVersion>
+    <MicrosoftBuildVersion>17.8.0</MicrosoftBuildVersion>
+  </PropertyGroup>
+
+  <!-- external libraries -->
+  <PropertyGroup>
+    <!-- Postgres -->
+    <NpgsqlVersion>8.0.2</NpgsqlVersion>
+    <EFCoreNpgsqlVersion>8.0.2</EFCoreNpgsqlVersion>
+
+    <!-- Test frameworks and libs -->
+    <FluentAssertionsVersion>6.11.0</FluentAssertionsVersion>
+    <FluentValidationVersion>11.6.0</FluentValidationVersion>
+    <CoverletMSbuildVersion>6.0.0</CoverletMSbuildVersion>
+    <NSubstituteVersion>5.0.0</NSubstituteVersion>
+    <NSubstituteAnalyzerVersion>1.0.16</NSubstituteAnalyzerVersion>
+    <XUnitVersion>2.5.3</XUnitVersion>
+    <XUnitRunnerVersion>2.5.3</XUnitRunnerVersion>
+    <XUnitLogging>0.3.0</XUnitLogging>
+    <NSubstituteQueryableVersion>7.0.0</NSubstituteQueryableVersion>
+
+    <!-- Rebus -->
+    <RebusVersion>8.4.2</RebusVersion>
+    <RebusRabbitMQVersion>9.3.0</RebusRabbitMQVersion>
+    <RebusDIVersion>10.1.2</RebusDIVersion>
+    <RebusLoggingVersion>5.0.0</RebusLoggingVersion>
+
+    <!--AutoMapper-->
+    <AutoMapperVersion>12.0.1</AutoMapperVersion>
+    <AutoMapperDIVersion>12.0.1</AutoMapperDIVersion>
+    <AutoMapperCollectionVersion>9.0.0</AutoMapperCollectionVersion>
+    <AutoMapperEFCoreVersion>9.0.0</AutoMapperEFCoreVersion>
+
+
+    <!-- Utilities -->
+    <PollyVersion>7.2.4</PollyVersion>
+    <SwaggerVersion>6.5.0</SwaggerVersion>
+
+    <AspNetCoreHealthChecksVersion>8.0.1</AspNetCoreHealthChecksVersion>
+  </PropertyGroup>
+
+  <!-- references to add to every project -->
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.6.40">
+    </PackageReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,119 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C366346F-3BC4-463F-9F38-41B191620A38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{18A55CC8-5871-43B6-A054-52932CFCB811}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6F4783BF-CBA5-4A2E-9F9F-DAD2BE631169}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Auth.Service", "src\Acerto.Auth.Service\Acerto.Auth.Service.csproj", "{2FD9F0EB-04B3-4D7F-AB12-30C6CACCAFDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Orders.Service", "src\Acerto.Orders.Service\Acerto.Orders.Service.csproj", "{DD95C48E-54D5-4BCD-9969-B6DCABD4C78F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Products.Service", "src\Acerto.Products.Service\Acerto.Products.Service.csproj", "{48432699-45DA-4434-852C-4A37D7A281EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Shared", "src\Acerto.Shared\Acerto.Shared.csproj", "{B364A39A-4572-45C7-8840-AF9855EC9650}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Shared.Contracts", "src\Acerto.Shared.Contracts\Acerto.Shared.Contracts.csproj", "{43D87D12-F549-4EE5-85A6-1F14FF1AEF07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Products.SDK", "src\Acerto.Products.SDK\Acerto.Products.SDK.csproj", "{3926734B-D1D7-4495-BADC-FB28D4E8F814}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Products.Service.Tests", "test\Acerto.Products.Service.Tests\Acerto.Products.Service.Tests.csproj", "{EAC53B31-93FB-4687-8AAF-880CF8373270}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Auth.SDK", "src\Acerto.Auth.SDK\Acerto.Auth.SDK.csproj", "{CD84B8EF-4813-43F6-864E-420F0AC01BDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{784DC9D5-20C0-480C-9D26-7D4A6AF0B60A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sdks", "Sdks", "{60963E71-F453-4113-96EA-ECDA7D84DB8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{30854A48-8BED-4F36-A645-3A1B52A4DCE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Orders.SDK", "src\Acerto.Orders.SDK\Acerto.Orders.SDK.csproj", "{82A76168-F4BD-45E6-9170-3BA6130EFAE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{A08E3F49-5595-492F-B2FD-99A8136AFE9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acerto.Testing.App", "src\Acerto.Testing.App\Acerto.Testing.App.csproj", "{06DE08D8-141A-4838-A9D8-5B3823FA0847}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FD9F0EB-04B3-4D7F-AB12-30C6CACCAFDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD9F0EB-04B3-4D7F-AB12-30C6CACCAFDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD9F0EB-04B3-4D7F-AB12-30C6CACCAFDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD9F0EB-04B3-4D7F-AB12-30C6CACCAFDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD95C48E-54D5-4BCD-9969-B6DCABD4C78F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD95C48E-54D5-4BCD-9969-B6DCABD4C78F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD95C48E-54D5-4BCD-9969-B6DCABD4C78F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD95C48E-54D5-4BCD-9969-B6DCABD4C78F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48432699-45DA-4434-852C-4A37D7A281EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48432699-45DA-4434-852C-4A37D7A281EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48432699-45DA-4434-852C-4A37D7A281EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48432699-45DA-4434-852C-4A37D7A281EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B364A39A-4572-45C7-8840-AF9855EC9650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B364A39A-4572-45C7-8840-AF9855EC9650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B364A39A-4572-45C7-8840-AF9855EC9650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B364A39A-4572-45C7-8840-AF9855EC9650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D87D12-F549-4EE5-85A6-1F14FF1AEF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D87D12-F549-4EE5-85A6-1F14FF1AEF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D87D12-F549-4EE5-85A6-1F14FF1AEF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D87D12-F549-4EE5-85A6-1F14FF1AEF07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3926734B-D1D7-4495-BADC-FB28D4E8F814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3926734B-D1D7-4495-BADC-FB28D4E8F814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3926734B-D1D7-4495-BADC-FB28D4E8F814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3926734B-D1D7-4495-BADC-FB28D4E8F814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC53B31-93FB-4687-8AAF-880CF8373270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC53B31-93FB-4687-8AAF-880CF8373270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC53B31-93FB-4687-8AAF-880CF8373270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC53B31-93FB-4687-8AAF-880CF8373270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD84B8EF-4813-43F6-864E-420F0AC01BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD84B8EF-4813-43F6-864E-420F0AC01BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD84B8EF-4813-43F6-864E-420F0AC01BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD84B8EF-4813-43F6-864E-420F0AC01BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A76168-F4BD-45E6-9170-3BA6130EFAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A76168-F4BD-45E6-9170-3BA6130EFAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A76168-F4BD-45E6-9170-3BA6130EFAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A76168-F4BD-45E6-9170-3BA6130EFAE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06DE08D8-141A-4838-A9D8-5B3823FA0847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06DE08D8-141A-4838-A9D8-5B3823FA0847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06DE08D8-141A-4838-A9D8-5B3823FA0847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06DE08D8-141A-4838-A9D8-5B3823FA0847}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2FD9F0EB-04B3-4D7F-AB12-30C6CACCAFDD} = {784DC9D5-20C0-480C-9D26-7D4A6AF0B60A}
+		{DD95C48E-54D5-4BCD-9969-B6DCABD4C78F} = {784DC9D5-20C0-480C-9D26-7D4A6AF0B60A}
+		{48432699-45DA-4434-852C-4A37D7A281EA} = {784DC9D5-20C0-480C-9D26-7D4A6AF0B60A}
+		{B364A39A-4572-45C7-8840-AF9855EC9650} = {30854A48-8BED-4F36-A645-3A1B52A4DCE0}
+		{43D87D12-F549-4EE5-85A6-1F14FF1AEF07} = {30854A48-8BED-4F36-A645-3A1B52A4DCE0}
+		{3926734B-D1D7-4495-BADC-FB28D4E8F814} = {60963E71-F453-4113-96EA-ECDA7D84DB8C}
+		{EAC53B31-93FB-4687-8AAF-880CF8373270} = {18A55CC8-5871-43B6-A054-52932CFCB811}
+		{CD84B8EF-4813-43F6-864E-420F0AC01BDD} = {60963E71-F453-4113-96EA-ECDA7D84DB8C}
+		{784DC9D5-20C0-480C-9D26-7D4A6AF0B60A} = {C366346F-3BC4-463F-9F38-41B191620A38}
+		{60963E71-F453-4113-96EA-ECDA7D84DB8C} = {C366346F-3BC4-463F-9F38-41B191620A38}
+		{30854A48-8BED-4F36-A645-3A1B52A4DCE0} = {C366346F-3BC4-463F-9F38-41B191620A38}
+		{82A76168-F4BD-45E6-9170-3BA6130EFAE6} = {60963E71-F453-4113-96EA-ECDA7D84DB8C}
+		{A08E3F49-5595-492F-B2FD-99A8136AFE9C} = {C366346F-3BC4-463F-9F38-41B191620A38}
+		{06DE08D8-141A-4838-A9D8-5B3823FA0847} = {A08E3F49-5595-492F-B2FD-99A8136AFE9C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {400CEC3F-1857-4ACC-9B15-27D9BA391969}
+	EndGlobalSection
+EndGlobal
